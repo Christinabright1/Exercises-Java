@@ -1,0 +1,40 @@
+Write a program that asks the user to enter an integer value
+positive. Read that value. If the value entered is 0 (zero) or negative, send an
+message to the screen informing that fact and end the program. If the value
+typed is actually positive, as requested, then show on the screen
+all digits below that number up to and including zero.
+Example:
+Entering the value 4, the result should be as follows:
+3
+two
+1
+0
+In turn, by entering the value -5, the following result should be displayed.
+Wrong value entered. The Program ends.
+
+
+import java.util.Scanner;
+
+
+public class Main
+{
+	public static void main(String[] args) {
+	System.out.println("Value is your input value ?");
+
+    Scanner myValue= new Scanner(System.in);
+    int my_integerValue = myValue.nextInt();
+
+   
+    for (int x = my_integerValue; x >= 0; x--){
+      System.out.println(x);
+    }
+   if (my_integerValue > 0){
+     for (int i =0; i <= my_integerValue; i++){
+         System.out.println(i);
+    }
+   }else{
+     System.out.println("You enter the wrong number");
+   }
+   
+	}
+}
