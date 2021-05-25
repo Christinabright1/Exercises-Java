@@ -1,0 +1,30 @@
+Create a program that reads three integer values entered for three variables,
+namely, n1, n2 and n3 and which then shows on the screen the value
+intermediate.
+note:
+It is not the average that is requested, but the value of the intermediate!
+So, for example, given the values: 7, 8 and 6, entered for variables n1, n2
+and n3, respectively, the answer is 7 (the value 7 is in the middle of 6 and 8). For your
+time, if the values 9, 3 and 5 are entered, for the variables n1, n2 and n3,
+respectively, the answer is 5.
+
+//n1=7, n2=8, n3=6  intermediate= 7
+
+import java.util.Scanner;
+class Main {
+  public static void main(String[] args) {
+	    System.out.println("Enter values:");
+    Scanner scan = new Scanner(System.in);
+    int n1 = scan.nextInt();
+    int n2 = scan.nextInt();
+    int n3 = scan.nextInt();
+    if (n1< n2){
+      System.out.print(n1);
+    }else if(n2 < n3){
+      System.out.print(n2);
+    }else{
+      System.out.print(n3);
+    }
+    //System.out.print(n1 + " " + n2 + " " + n3);
+}
+}
