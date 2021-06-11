@@ -1,0 +1,23 @@
+class Main {
+  public static void main(String[] args) {
+  //one dimensional array
+  int i, j;
+
+  int myArray [][] = {
+    {1,5,7,8},
+    {10,14,4,}
+  };
+
+  
+  //System.out.println();
+
+  for (i =0; i < 2; i++){
+    for(j =0; j < 3; j++){
+      System.out.println("Element posição" + i +","+  j + ": "+
+      Integer.toString(myArray[i][j]));
+    }
+    System.out.println();
+  }
+  
+  }//fecha class
+}//fecha main
