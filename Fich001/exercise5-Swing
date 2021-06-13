@@ -1,0 +1,5 @@
+Escreva um programa que crie um vetor unidimensional de sete valores
+digitados, do tipo double, usando ciclos e as caixas de diálogo do swing, e que,
+seguidamente, passe-o (o vetor), como argumento, a uma função criada por si,
+a fim de esta (função) calcular e devolver-lhe a quantidade de valores negativos.
+Finalmente, o programa deve imprimir o resultado devolvido pela função.
