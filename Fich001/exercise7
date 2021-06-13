@@ -1,0 +1,9 @@
+Crie uma classe cilindro com o objetivo de calcular a área, o volume e o diâmetro
+de um determinado objeto cilindro, especificado por si.
+A classe deve incluir construtores.
+A classe deve conter os seguintes métodos:
+calcArea()
+CalcDiam() e
+calcVolume()
+Crie os objetos que entender necessários para testá-los rigorosamente.
+Seja livre no seu desenho e implementação.
