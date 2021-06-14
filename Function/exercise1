@@ -1,0 +1,81 @@
+// proj_n_Jv008_funcs_static
+
+// Jv008_funcs_static
+
+// Este programa usa um método static para calcular a média de um
+// array bidimensional 2 x 3 de doubles
+
+// Observe-se que os métodos devem ser static quando são invocados
+// por um método static que, neste caso, é a função main
+
+import javax.swing.JOptionPane;
+
+public class Jv008_funcs_static
+{
+  static double calcMed(double tab[][])
+  {
+      double soma, media;
+      int i, j;
+      soma = 0;
+
+      for(i = 0; i < 2; i++)
+      {
+          for(j = 0; j < 3; j++)
+          {
+              soma = soma + tab[i][j];
+          }
+      }
+
+      media = soma / 6;
+
+      return media;
+  }
+
+
+    public static void main(String [] args)
+    {
+        // cria e carrega uma tabela bi 2X3, de valores double
+        // digitados, e mostra-os logo a seguir
+
+        double mat[][] = new double[2][3];
+        int i, j;
+
+        String a;
+        double valor;
+
+        for(i = 0; i < 2; i++)
+        {
+            for (j = 0; j < 3; j++)
+            {
+               a = JOptionPane.showInputDialog
+                       ("Digite valor " + i + "," + j + ": ");
+
+               valor = Double.parseDouble(a);
+
+               mat[i][j] = valor;
+            }
+        }
+
+        // mostrar os valores da matriz
+
+        for(i = 0; i < 2; i++)
+        {
+            for (j = 0; j < 3; j++)
+            {
+                System.out.print(" " + Double.toString(mat[i][j]));
+            }
+            System.out.println();
+        }
+
+
+        double med;
+
+        med = calcMed(mat);
+
+        System.out.println();
+
+        System.out.println("\nA Média da matriz = " +
+                Double.toString(med));
+
+    } // fecha main
+} // fecha class
