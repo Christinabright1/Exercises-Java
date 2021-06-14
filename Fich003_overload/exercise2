@@ -1,0 +1,143 @@
+// proj_n_Jv009_overload
+
+// Jv009_overload
+
+import javax.swing.JOptionPane;
+
+// Class Jv009_overload
+
+/* Overload - Sobrecarga de métodos
+
+   Este Programa tem como objetivo dar a conhecer a finalidade da
+   técnica de programação Overload.
+
+   Também tem como objetivo conhecerem através da prática a natureza
+   das funções em Java.
+
+   Overload ou sobrecarga de métodos (funções) é uma técnica de
+   programação, presente nas linguagens orientadas a classes e
+   objetos, que permite a criação de várias funções com o mesmo
+   nome dentro do mesmo programa.
+
+   Estas funções distinguem-se entre si através das suas diferentes
+   assinaturas, ou seja, pelo seu diferente número ou tipo de
+   argumentos.
+
+   Neste programa usa-se três funções, todas chamadas de soma, em
+   três diferentes aplicações: uma soma de dois inteiros, uma soma
+   de dois floats e uma soma de um valor inteiro em si próprio.
+
+   Ao executarem o programa vão reparar que cada uma das funções soma
+   vai ser invocada de acordo com os dados passados como argumentos.
+
+   Por exemplo, se uma função soma for chamada com dois argumentos
+   inteiros, então é a função é a função abaixo que vai ser chamada:
+
+   static int soma(int a, int b)
+
+   Mas, se uma função soma for chamada com três argumentos inteiros,
+   então é a função abaixo que vai ser chamada:
+
+   static int soma(int a, int b, int c)
+
+   Por sua vez, se uma função soma for chamada com dois argumentos
+   do tipo double, então é a função abaixo que vai ser chamada:
+
+   static double soma(double x, double y)
+
+
+   Uma nota sobre funções em Java:
+
+   Dado que a declaração de qualquer dado em Java requer uma
+   declaração explícita do tipo de dados, toda a função, por
+   esta razão, tem um tipo de dados consoante o tipo de dados
+   do valor que ela retorna.
+
+   Por conseguinte, se uma função pretender retornar um valor
+   inteiro, então ela é do tipo inteiro, como o exemplo abaixo
+   ilustra:
+
+    static int soma(int a, int b)
+    {
+        return (a + b);
+    }
+
+   Por sua vez, se uma função pretender retornar um valor double,
+   então ela é do tipo double, como o exemplo abaixo ilustra:
+
+    static double soma(double x, double y)
+    {
+        return (x + y);
+    }
+
+   Mas, se uma função não tiver como objetivo retornar qualquer
+   valor, então ela é do tipo void, como o exemplo abaixo ilustra:
+
+    static void calculo_1(double x, double y)
+    {
+        double soma = x + y;
+
+        System.out.println("Soma de dois doubles: " +
+
+                Double.toString(soma);
+    }
+
+    Observe-se que neste último exemplo a função caculo_1 limita-se
+    a imprimir o resultado e, como, não retorna qualquer valor, então
+    é do tipo void.
+*/
+
+public class Jv009_overload {
+
+    static int soma(int a, int b)
+    {
+        return (a + b);
+    }
+
+    static int soma(int a, int b, int c)
+    {
+        return (a + b + c);
+    }
+
+    static double soma(double x, double y)
+    {
+        return (x + y);
+    }
+
+    public static void main(String[] args) {
+        int n1, n2, n3;
+        double w1, w2;
+
+        n1 = Integer.parseInt(JOptionPane.showInputDialog
+
+                ("Soma de valores Inteiros - Digite Valor 1: "));
+
+        n2 = Integer.parseInt(JOptionPane.showInputDialog
+
+                ("Soma de valores Inteiros - Digite Valor 2: "));
+
+        n3 = Integer.parseInt(JOptionPane.showInputDialog
+
+                ("Soma de valores Inteiros - Digite Valor 3: "));
+
+        w1 = Double.parseDouble(JOptionPane.showInputDialog
+
+                ("Soma de dois doubles - Digite Valor 1: "));
+
+        w2 = Double.parseDouble(JOptionPane.showInputDialog
+
+                ("Soma de dois doubles - Digite Valor 2: "));
+
+        System.out.println("Soma dos dois primeiros Valores Inteiros: " +
+
+                Integer.toString(soma(n1, n2)));
+
+        System.out.println("Soma dos tres Valores Inteiros: " +
+
+                Integer.toString(soma(n1, n2, n3)));
+
+        System.out.println("Soma dos dois doubles: " +
+
+                Double.toString(soma(w1, w2)));
+    }
+}
