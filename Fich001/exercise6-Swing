@@ -1,2 +1,58 @@
 Repita o programa anterior, mas relativamente a uma matriz bidimensional 2X3
 (2 linhas por 3 colunas).
+
+
+/*Escreva um programa que crie um vetor unidimensional de sete valores
+digitados, do tipo double, usando ciclos e as caixas de diálogo do swing, e que,
+seguidamente, passe-o (o vetor), como argumento, a uma função criada por si,
+a fim de esta (função) calcular e devolver-lhe a quantidade de valores negativos.
+Finalmente, o programa deve imprimir o resultado devolvido pela função.
+6. Repita o programa anterior, mas relativamente a uma matriz bidimensional 2X3
+(2 linhas por 3 colunas).*/
+import javax.swing.JOptionPane;
+class Main {
+
+  //static function
+  static double countnegValue(double tab[][]){
+     int i, j;
+     int count =0;
+     for(i= 0; i<tab.length; i++){
+       for(j=0; j<tab.length; j++){
+         if(tab[i][j] < 0){
+          count++; 
+         }
+       }
+     }
+    return count;
+  }
+
+
+  public static void main(String[] args) {
+
+    //create two dimension array
+    double myArray [][]= new double [2][3];
+    int i,j;
+    String a;
+    double valores;
+    for(i=0; i< 2; i++){
+      for(j=0; j< 3; j++){
+        a= JOptionPane.showInputDialog("Digit valores:"+i+","+j);
+        valores= Double.parseDouble(a);
+        myArray[i][j]= valores;
+
+      }
+    }
+    //monstrar os valores
+
+    for(i=0; i< 2; i++){
+      for(j=0; j< 3; j++){
+        System.out.println(Double.toString(myArray[i][j]));
+      }
+      System.out.println();
+    }
+    double negValue;
+    negValue = countnegValue(myArray);
+    System.out.println();
+      System.out.println(negValue);
+  }//fecha main
+}//fecha class
