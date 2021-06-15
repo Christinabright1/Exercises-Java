@@ -1,0 +1,71 @@
+// proj_n_Jv012_classes3
+
+// Jv012_classes3
+
+import javax.swing.*;
+
+// Baseia-se no programa anterior, mas com as seguintes diferenças:
+// Pede para digitar as taxas IRS e SS
+// Aumenta o número de atributos
+// A função passa a ser do tipo void (devido o aumento dos atributos)
+// Altera assim um pouco a arquitetura do programa
+
+class Empregados_CA
+{
+  public String nome;
+  public long id;
+  public double salBruto;
+  public double salLiquido;
+  public double taxaIRS;
+  public double taxaSS;
+
+  void calcLiquido()
+  {
+      salLiquido = salBruto - ((salBruto * taxaIRS )
+              + (salBruto * taxaSS));
+  }
+};
+
+
+public class Jv012_classes3
+{
+    public static void main(String [] args)
+    {
+        Empregados_CA emp1 = new Empregados_CA();
+        Empregados_CA emp2 = new Empregados_CA();
+
+        emp1.nome = "Ana Ceu";
+        emp1.id = 200;
+        emp1.salBruto = 2000.75;
+
+        emp2.nome = "Rui Silva";
+        emp2.id = 400;
+        emp2.salBruto = 1500.25;
+
+        emp1.taxaIRS = Double.parseDouble(JOptionPane.showInputDialog
+                ("Digite a Taxa IRS do Empregado " + emp1.id + ": "));
+
+        emp2.taxaIRS = Double.parseDouble(JOptionPane.showInputDialog
+                ("Digite a Taxa IRS do Empregado " + emp2.id + ": "));
+
+        emp1.taxaSS = Double.parseDouble(JOptionPane.showInputDialog
+                ("Digite a Taxa SS do Empregado " + emp1.id + ": "));
+
+        emp2.taxaSS = Double.parseDouble(JOptionPane.showInputDialog
+                ("Digite a Taxa SS do Empregado " + emp2.id + ": "));
+
+
+        // Calcular os salários Líquidos
+
+        emp1.calcLiquido();
+        emp2.calcLiquido();
+
+        System.out.println("Nome do Empregado: "+ emp1.nome);
+        System.out.println("Id: "+ emp1.id);
+        System.out.println("Salario: "+ Double.toString(emp1.salLiquido));
+
+        System.out.println("\n\nNome do Empregado: "+ emp2.nome);
+        System.out.println("Id "+ emp2.id);
+        System.out.println("Salario: "+ Double.toString(emp2.salLiquido));
+    }
+}
