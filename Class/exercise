@@ -1,0 +1,106 @@
+// proj_n_Jv013_classes4
+
+// Jv013_classes4
+
+/*
+	Programa essencialmente sobre:
+
+	Classes em geral
+	Construtor
+	Overloading
+	Cláusula this
+	Variáveis de Objeto
+*/
+
+/*
+Variáveis de Objeto
+
+São as que são declaradas na zona de definição da própria classe
+(e não dentro do main ou de outro método qualquer).
+
+Estas variáveis são conhecidas de todos os objetos que venham a ser
+concretizados na classe, embora cada um deles tenha os seus próprios
+valores.
+
+Cada uma destas variáveis tem assim o seu valor próprio em cada objeto
+*/
+
+class Empregados_TAP
+{
+    public String nome; // Vars de objeto
+    public long id;
+    public double salBruto;
+    public double salLiquido;
+    public double taxaIRS = 0.22;
+    public double taxaSS = 0.12;
+
+    void calcLiquido() {
+        salLiquido = salBruto - ((salBruto * taxaIRS) + (salBruto * taxaSS));
+    }
+
+    // construtor 1 em overload
+    public Empregados_TAP (String nome, int id)
+    {
+        this.nome = nome;
+        this.id = id;
+    }
+
+    // construtor 2 em overload
+    public Empregados_TAP (String nome)
+    {
+        this.nome = nome;
+    }
+
+    // construtor 3 em overload - Vazio
+    public Empregados_TAP()
+    {
+    }
+
+    //construtor 4 em overload
+    public Empregados_TAP(String nome, int id, double salB)
+    {
+        this.nome = nome;
+        this.id = id;
+        salBruto = salB;
+    }
+};
+
+public class Jv013_classes4
+{
+    public static void main(String [] args)
+    {
+        Empregados_TAP emp1 = new Empregados_TAP("Ana Silva");
+        emp1.id = 200;
+        emp1.salBruto = 1500.00;
+        emp1.calcLiquido();
+        System.out.println(emp1.nome);
+        System.out.println(emp1.id);
+        System.out.println(Double.toString(emp1.salLiquido));
+
+        Empregados_TAP emp2 = new Empregados_TAP("Carlos Reis", 200, 2000.00);
+        emp2.calcLiquido();
+        System.out.println();
+        System.out.println(emp2.nome);
+        System.out.println(emp2.id);
+        System.out.println(Double.toString(emp2.salLiquido));
+
+        Empregados_TAP emp3 = new Empregados_TAP ("Luisa Martins", 350);
+        emp3.salBruto = 1200.00;
+        emp3.calcLiquido();
+        System.out.println();
+        System.out.println(emp3.nome);
+        System.out.println(emp3.id);
+        System.out.println(Double.toString(emp3.salLiquido));
+
+        // invoca construtor vazio
+        Empregados_TAP emp4 = new Empregados_TAP();
+        emp4.nome = "Luis Abreu";
+        emp4.id = 180;
+        emp4.salBruto = 2200.00;
+        emp4.calcLiquido();
+        System.out.println();
+        System.out.println(emp4.nome);
+        System.out.println(emp4.id);
+        System.out.println(Double.toString(emp4.salLiquido));
+    }
+}
