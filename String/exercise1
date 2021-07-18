@@ -1,0 +1,19 @@
+class Main {
+  public static void main(String[] args) {
+
+  String str = "JavaExamplesJavaCodeJavaProgram";
+ 
+  int count = ( str.split("Java").length ) - 1;
+
+
+  int counting= (str.split("Java").length);
+
+
+  System.out.println(counting);
+ 
+  System.out.println("Total occurrences: " + count);
+
+  
+
+  }
+}
