@@ -1,0 +1,44 @@
+
+//Create abstract class
+
+/*3 - your abstract class needs a constructor that receives as a parameter the radius, r. Otherwise, you can't calculate volume nor area*/
+abstract class  esfera {
+
+
+   public double Pi= 3.14;
+
+  //abstract method
+   // Abstract method (does not have a body)
+     abstract double calcArea(double r);
+
+    //non-abstract method
+      double diâmetro(double r){
+    return (2*r);
+    }
+
+    double volume(double r){
+      return ((4*Pi*r*r*r)/3);
+    }
+};
+
+// subclass (inherit from esfera)
+class Newesfera extends esfera {
+
+  double calcArea(double r){
+     return (4*Pi*r*r);
+  }
+  
+};
+  
+
+
+class Main {
+  public static void main(String[] args) {
+      //create Newesfera
+      Newesfera mySphere = new Newesfera();
+     
+   System.out.println(" Area is"+mySphere.calcArea(3));
+   System.out.println("Diametro"+mySphere.diâmetro(4));
+    System.out.println("Volume is "+mySphere.volume(5));
+  }
+}
