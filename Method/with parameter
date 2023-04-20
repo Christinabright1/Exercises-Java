@@ -1,0 +1,10 @@
+class Main {
+  static int sumNumbers(int x, int y) {
+    return x + y;
+  }
+
+  public static void main(String[] args) {
+    
+    System.out.println(sumNumbers(2,5));
+  }
+}
